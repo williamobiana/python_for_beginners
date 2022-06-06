@@ -1,0 +1,247 @@
+A function is a block of code which only runs when it is called.
+You can pass data (aka parameters, aka block of code), into a function.
+A function will return data as a result.
+
+Benefit and what they are used for:
+rather than write the block of code over and over again,
+you can make it a function and use it when needed.
+
+Creating a Function:
+a function is defined using the "def" keyword
+example:
+def my_function():
+  print("Hello from a function")
+
+Calling a Function:
+input:
+my_function()
+output: 
+Hello from a function
+
+
+Argurments vs Parameters
+arguments and parameters are both information that can be passed into a function
+parameter is a variable
+argument is a value
+
+
+Arguments:
+information can be passed into functions as argurments
+arguments are specified after the function name, inside the parentheses ().
+you can add as many argurments as you want, just seperate them with a comma ,.
+example:
+def my_function(fname):
+  print(fname + 'Obiana')
+---
+input:
+my_function('Emil')
+my_function('Tobias')
+my_function('Linus')
+output:
+Emil Obiana
+Tobias Obiana
+Linus Obiana
+
+
+Number of Arguments:
+By default, a function must be called with the correct number of arguments
+if your function expects 2 arguments, you have to call the function with 2 arguments
+example:
+def my_function(fname, lname):
+  print(fname + " " + lname)
+---
+input:
+my_function('Emil', 'Obiana')
+output:
+Emil Obiana
+
+
+Arbitary Arguments (*args): 
+if you do not know how many arguments that will be passed into your function,
+add a "*" before the parameter name
+this will cause the function to receive a "tuple" of arguments and access them accordinly
+example:
+def my_function(*kids)
+  print('The youngest child is ' + kids[2])
+---
+input:
+my_function("Emil", "Tobias", "Linus")
+output:
+The youngest child is Linus
+
+
+Keyword Arguments:
+you can assign arguments with keys (key = value)
+example:
+def my_function(child1, child2, child3)
+  print("The youngest child is " + child3)
+---
+input
+my_function(child1='Emil', child2='Tobias', child3='Linus')
+output
+The youngest child is Linus
+
+
+Arbitrary Keyword Arguments (**kwargs):
+If you do not know how many keyword arguments that will be passed into your function, 
+add ** before the parameter name
+this will cause the function to receive a "dictionary" of arguments and access them accordinly
+def my_function(**kid)
+  print("His last name is " + kid["lname"])
+---
+input:
+my_function(fname='Tobias', lname='Obiana')
+output:
+His last name is Obiana
+
+
+Default Parameter Value:
+If we call a function without argument, it uses the default value:
+example:
+def my_function(country = "Norway"):
+  print("I am from " + country)
+---
+input:
+my_function()
+my_function('Sweden')
+my_function('Nigeria')
+my_function('Brazil')
+output:
+I am from Norway
+I am from Sweden
+I am from Nigeria
+I am from Brazil
+
+
+Passing a List as an Argument:
+You can send any data types of argument to a function (string, number, list, dictionary etc.)
+and it will be treated as the same data type inside the function.
+E.g. if you send a List as an argument, it will still be a List when it reaches the function.
+def my_function(food):
+  for x in food:
+    print(x)
+---
+fruits = ["apple", "banana", "cherry"]
+input:
+my_function(fruits)
+output:
+apple
+banana
+cherry
+
+
+Return Values:
+To let a function return a value, use the "return" statement:
+example:
+def my_function(x):
+  return 5 * x
+---
+input:
+print(my_function(3))
+output
+15
+note: when using return statement in function def, the input is print(function)
+
+
+The Pass Statement:
+function definitions cannot be empty,
+but if you for some reason have a function definition with no content,
+put in the "pass" statement to avoid getting an error.
+example:
+def myfunction():
+  pass
+
+
+Recursion(advanced):
+Python also accepts function recursion, which means a defined function can call itself.
+This means that you can loop through data to reach a result.
+note: be careful with recursion as it can return a function which never terminates
+
+example:
+"tri_recursion()" is a function that we have defined to call itself ("recurse")
+we use the "k" variable as the data
+which decrements (-1) every time we recurse
+The recursion ends when the condition is not greater than 0 (i.e. when it is 0)
+
+def tri_recursion(k):
+  if(k > 0):
+    result = k + tri_recursion(k - 1)
+    print(result)
+  else:
+    result = 0
+  return result
+---
+input:
+print('\n\nRecurssion Example Results')
+tri_recursion(6)
+output:
+Recurssion Example Results
+1
+3
+6
+10
+15
+21
+
+reference: https://www.youtube.com/watch?v=ngCos392W4w
+the fomular loops on itself
+
+k = 0
+tri_recursion(0)
+0
+
+k = 1
+tri_recursion(1)
+1 + tri_recursion(1-1)
+1 + tri_recursion(0)
+1 + 0
+1
+
+k = 2
+tri_recursion(2)
+2 + tri_recursion(2-1)
+2 + tri_recursion(1)
+2 + 1
+3
+
+k = 3
+tri_recursion(3)
+3 + tri_recursion(3-1)
+3 + tri_recursion(2)
+3 + 3
+6
+
+
+# Summary
+A function is a block of code which only runs when it is called.
+You can pass data into a function.
+A function will return data as a result.
+
+Benefit and what they are used for:
+rather than write the block of code over and over again,
+you can make it a function and use it when needed.
+
+Types of functions:
+User defined: defined by User
+Built in: inbuilt in Python
+Lambda: un-named
+Recursion: function that calls itself
+
+a loop is a sequence of instruction that is continually repeated 
+until a certain condition is reached.
+
+types of loops in Python
+For loop using else statement.
+The infinite Loop. (while loop)
+“Nested” loops.
+
+loops are needed to execute a code repeatedly, rather than hard code each command
+
+imperative programming:
+Imperative programming is a software development paradigm 
+where functions are implicitly coded in every step required to solve a problem. 
+In imperative programming, every operation is coded 
+and the code itself specifies how the problem is to be solved, 
+which means that pre-coded models are not called on.
+
+meaning "each block of your code should be a function that solve a step of the problem"

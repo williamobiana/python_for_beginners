@@ -1,0 +1,240 @@
+statements are executed sequentially
+A loop statement allows us to execute a statement or group of statements multiple times.
+
+Types of loop
+1. While loop
+2. For loop
+3. nested loop
+
+
+
+
+1. While loop:
+repeats a statement or group of statements while a given condition is TRUE.
+it tests the condition before executing the loop body.
+
+when the conditon becomes FALSE, the program passes the line immediately after the loop
+
+all statements indented by the same number of spaces are considered to be part of a single block of code.
+python uses indentation as its method of grouping statements.
+example
+count = 0
+while (count < 9):
+    print('The count is: ', count)
+    count = count + 1
+
+print('Good bye!')
+
+#output
+The count is: 0
+The count is: 1
+The count is: 2
+The count is: 3
+The count is: 4
+The count is: 5
+The count is: 6
+The count is: 7
+The count is: 8
+Good bye!
+
+the block was executed until count is no longer less than 9
+---
+the infinite loop:
+a loop becomes infinite if a condition never becomes FALSE. and you need to use CTRL+C to exit the program
+---
+using "else" statement with "while" loop:
+if the else statement is used with a while loop, the else statement is executed when the condition becomes FALSE
+example
+count = 0
+while count < 5:
+    print (count, " is less than 5")
+    count = count + 1
+else:
+    print (count, " is not less than 5")
+
+# output
+0 is less than 5
+1 is less than 5
+2 is less than 5
+3 is less than 5
+4 is less than 5
+5 is not less than 5
+
+
+
+
+2. For loop:
+executes a sequence of statement multiple times and abbreviates the code that manages the loop variable
+
+syntax:
+"for" x "in" sequence:
+
+If a sequence contains an expression list, it is evaluated first.
+Then, the first item in the sequence is assigned to the iterating variable x
+Next, the statements block is executed.
+Each item in the list is assigned to x until the entire sequence is exhausted.
+
+example
+for letter in 'Python':
+    print('Current Letter:', letter)
+
+fruits = ['banana', 'apple', 'mango']
+for fruit in fruits:
+    print('Current fruit', fruit)
+
+print('Good bye!')
+
+#output
+Current Letter : P
+Current Letter : y
+Current Letter : t
+Current Letter : h
+Current Letter : o
+Current Letter : n
+Current fruit : banana
+Current fruit : apple
+Current fruit : mango
+Good bye!
+
+using "else" statement with "for" loop:
+if the else statement is used with a "for" loop, the else statement is executed when the loop has exhaused iterating the list
+
+
+
+
+3. Nested loop:
+we can use one or more loop inside any another while, for or do..while loop.
+(a block inside a block)
+example
+i =  2
+while(i < 100):
+    j = 2
+    while(j <= i/j):
+        if not (i%j):
+        break
+        j = j + 1
+    if (j > i/j):
+    print(i)
+    i = i + 1
+
+print('Good bye!')
+
+#output
+2 is prime
+3 is prime
+5 is prime
+7 is prime
+...
+89 is prime
+97 is prime
+Good bye!
+
+
+
+
+
+Loop control statements
+1. break statement
+2. countinue statement
+3. pass statement
+
+
+
+1. break statement
+Terminates the loop statement and transfers execution to the statement immediately following the loop
+The most common use for break is when some external condition is triggered requiring a hasty exit from a loop.
+The break statement can be used in both while and for loops.
+If you are using nested loops, 
+the break statement stops the execution of the innermost loop and start executing the next line of code after the block.
+example
+for letter in 'Python':    
+   if letter == 'h':
+      break
+   print('Current Letter:', letter)
+  
+var = 10                    
+while var > 0:              
+   print('Current variable value:', var)
+   var = var -1
+   if var == 5:
+      break
+
+print "Good bye!"
+
+#output
+Current Letter: P
+Current Letter: y
+Current Letter: t
+Current variable value: 10
+Current variable value: 9
+Current variable value: 8
+Current variable value: 7
+Current variable value: 6
+Good bye!
+
+
+
+2. countinue statement
+Causes the loop to skip the remainder of its body and immediately retest its condition prior to reiterating
+It returns the control to the beginning of the while loop
+The continue statement rejects all the remaining statements in the current iteration of the loop 
+and moves the control back to the top of the loop.
+example
+for letter in 'Python':     
+   if letter == 'h':
+      continue
+   print('Current Letter:', letter)
+
+var = 10                    
+while var > 0:              
+   var = var -1
+   if var == 5:
+      continue
+   print 'Current variable value:', var
+print "Good bye!"
+
+#output
+Current Letter: P
+Current Letter: y
+Current Letter: t
+Current Letter: o
+Current Letter: n
+Current variable value: 9
+Current variable value: 8
+Current variable value: 7
+Current variable value: 6
+Current variable value: 4
+Current variable value: 3
+Current variable value: 2
+Current variable value: 1
+Current variable value: 0
+Good bye!
+
+
+
+3. pass statement
+The pass statement in Python is used when a statement is required syntactically 
+but you do not want any command or code to execute
+The pass statement is a null operation; nothing happens when it executes
+example
+for letter in 'Python': 
+   if letter == 'h':
+      pass
+      print('This is pass block')
+   print('Current Letter:', letter)
+
+print "Good bye!"
+
+#output
+Current Letter: P
+Current Letter: y
+Current Letter: t
+This is pass block
+Current Letter: h
+Current Letter: o
+Current Letter: n
+Good bye!
+
+
+reference:
+https://www.tutorialspoint.com/python/python_loops.htm

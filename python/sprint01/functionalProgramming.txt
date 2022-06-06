@@ -1,0 +1,29 @@
+Functional programming is a programming paradigm in which we try to bind everything in functions 
+It uses expressions instead of statements
+An expression is evaluated to produce a value (functional programming)
+whereas a statement is executed to assign variables. (imperative programming)
+
+# concepts of functional programming
+
+pure functions: (has 2 properties)
+1. they always produce the same output for the same arguments irrespective of anything else
+2. they have no side-effects i.e. they do modify any argument or global variables or output something.
+
+rescursion:
+There are no “for” or “while” loop in functional languages
+Iteration in functional languages is implemented through recursion
+
+functions are First-Class and can be Higher-Order:
+First-class functions are treated as first-class variable.
+The first-class variables can be passed to functions as a parameter
+and can be returned from functions or stored in data structures
+
+first class: eg upper & lower cases
+higher order: eg maps, filter, lambda functions
+
+variables are immutable:
+we can’t modify a variable after it’s been initialized
+we can create new variables – but we can’t modify existing variables
+
+
+
