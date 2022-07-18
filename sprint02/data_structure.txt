@@ -1,0 +1,447 @@
+Reference:
+https://www.geeksforgeeks.org/python-data-structures/
+
+
+Data Structures are a way of organizing data so that it can be accessed more efficiently 
+...depending upon the situation.
+
+Python Lists are just like the arrays, declared in other languages which is an ordered collection of data. 
+It is very flexible as the items in a list do not need to be of the same type.(mutable)
+
+example:
+List = [1, 2,  3, "GFG", 2.3]
+print(List)
+output:
+[1, 2, 3, 'GFG', 2.3]
+
+LISTS
+List elements can be accessed by the assigned index. In python starting index of the list, 
+sequence is 0 and the ending index is (if N elements are there) N-1
+
+# Creating a List with the use of multiple values 
+List = ["Geeks", "For", "Geeks"] 
+print("\nList containing multiple values: ") 
+print(List)
+output:
+List containing multiple values: 
+['Geeks', 'For', 'Geeks']
+
+# Creating a Multi-Dimensional List (By Nesting a list inside a List) 
+List2 = [['Geeks', 'For'], ['Geeks']] 
+print("\nMulti-Dimensional List: ") 
+print(List2) 
+output:
+Multi-Dimensional List: 
+[['Geeks', 'For'], ['Geeks']]
+
+# accessing a element from the list using index number 
+print("Accessing element from the list") 
+print(List[0])  
+print(List[2]) 
+output:
+Accessing element from the list
+Geeks
+Geeks
+
+# accessing a element using negative indexing 
+print("Accessing element using negative indexing")       
+# print the last element of list 
+print(List[-1])     
+# print the third last element of list  
+print(List[-3])
+output:
+Accessing element using negative indexing
+Geeks
+Geeks
+
+DICTIONARY
+Python dictionary is like "hash tables" in any other language with the time complexity of O(1). 
+It is an unordered collection of data values, used to store data values like a map, which, 
+... unlike other Data Types that hold only a single value as an element, 
+Dictionary holds the key:value pair. 
+Key-value is provided in the dictionary to make it more optimized.
+We can create a dictionary by using curly braces {} or dictionary comprehension.
+
+example:
+# Creating a Dictionary
+Dict = {'Name': 'Geeks', 1: [1, 2, 3, 4]}
+print("Creating Dictionary: ")
+print(Dict)
+output:
+Creating Dictionary: 
+{'Name': 'Geeks', 1: [1, 2, 3, 4]}
+
+# accessing a element using key 
+print("Accessing a element using key:") 
+print(Dict['Name']) 
+output:
+Accessing a element using key:
+Geeks
+
+# accessing a element using get() method 
+print("Accessing a element using get:") 
+print(Dict.get(1)) 
+
+# creation using Dictionary comprehension
+myDict = {x: x**2 for x in [1,2,3,4,5]}
+print(myDict)
+output:
+Accessing a element using get:
+[1, 2, 3, 4]
+{1: 1, 2: 4, 3: 9, 4: 16, 5: 25}
+
+
+TUPLE
+Python Tuple is a collection of Python objects much like a list but Tuples are immutable.
+i.e. the elements in the tuple cannot be added or removed once created.
+tuples are created by placing a sequence of values separated by ‘comma’ with or 
+... without the use of parentheses for grouping of the data sequence.
+example:
+# Creating a Tuple with the use of Strings
+Tuple = ('Geeks', 'For')
+print("\nTuple with the use of String: ")
+print(Tuple)
+output:
+Tuple with the use of String: 
+('Geeks', 'For')
+
+# Creating a Tuple with the use of list
+list1 = [1, 2, 4, 5, 6]
+print("\nTuple using List: ")
+output:
+Tuple using List: 
+
+Tuple = tuple(list1)
+# Accessing element using indexing
+print("First element of tuple")
+print(Tuple[0])  
+output:
+First element of tuple
+1
+
+# Accessing element from last negative indexing
+print("\nLast element of tuple")
+print(Tuple[-1])
+print("\nThird last element of tuple")
+print(Tuple[-3])
+output:
+Last element of tuple
+6
+Third last element of tuple
+4
+
+
+SET 
+Python Set is an ordered collection of data that is mutable and does not allow any duplicate element.
+example:
+# Creating a Set with a mixed type of values (Having numbers and strings) 
+Set = set([1, 2, 'Geeks', 4, 'For', 6, 'Geeks']) 
+print("\nSet with the use of Mixed Values") 
+print(Set) 
+output:
+Set with the use of Mixed Values
+{1, 2, 'Geeks', 4, 6, 'For'}
+
+# Accessing element using for loop 
+print("\nElements of set: ") 
+for i in Set: 
+    print(i, end =" ") 
+print()
+output:
+Elements of set: 
+1 2 Geeks 4 6 For 
+
+# Checking the element using in keyword 
+print("Geeks" in Set)
+output:
+True
+
+
+FROZEN SETS 
+Frozen sets in Python are immutable objects that only support methods and operators 
+... that produce a result without affecting the frozen set or sets to which they are applied. 
+example:
+# Same as {"a", "b","c"}
+normal_set = set(["a", "b","c"])
+print("Normal Set")
+print(normal_set)
+output:
+Normal Set
+{'a', 'c', 'b'}
+
+# A frozen set
+frozen_set = frozenset(["e", "f", "g"])
+print("\nFrozen Set")
+print(frozen_set)
+output:
+Frozen Set
+frozenset({'g', 'e', 'f'})
+
+
+STRINGS 
+a string is an immutable array of characters
+String = "Welcome to GeeksForGeeks"
+print("Creating String: ") 
+print(String) 
+output:
+Creating String: 
+Welcome to GeeksForGeeks
+
+# Printing First character 
+print("\nFirst character of String is: ") 
+print(String[0])
+output:
+First character of String is: 
+W
+
+# Printing Last character 
+print("\nLast character of String is: ") 
+print(String[-1])
+output:
+Last character of String is: 
+s
+
+BYTEARRAY
+Python Bytearray gives a mutable sequence of integers in the range 0 <= x < 256.
+# Creating bytearray
+a = bytearray((12, 8, 25, 2))
+print("Creating Bytearray:")
+print(a)
+output:
+Creating Bytearray:
+bytearray(b'\x0c\x08\x19\x02')
+
+# accessing elements
+print("\nAccessing Elements:", a[1])
+output:
+Accessing Elements: 8
+
+# modifying elements 
+a[1] = 3
+print("\nAfter Modifying:")
+print(a)
+output:
+After Modifying:
+bytearray(b'\x0c\x03\x19\x02')
+
+# Appending elements
+a.append(30)
+print("\nAfter Adding Elements:")
+print(a)
+output:
+After Adding Elements:
+bytearray(b'\x0c\x03\x19\x02\x1e')
+
+
+SORTING
+Sorting is defined as an arrangement of data in a certain order.
+
+POPULAR SORTING ALGORITHM
+Bubble Sort
+Selection Sort
+Insertion Sort
+Merge Sort
+Heap Sort
+Radix Sort
+Count Sort
+Quick Sort
+Bucket Sort
+Shell Sort
+
+
+BUBBLESORT
+Bubble Sort is the simplest sorting algorithm that works by 
+... repeatedly swapping the adjacent elements if they are in the wrong order. 
+
+Reference:
+https://www.geeksforgeeks.org/bubble-sort/
+
+How Bubble Sort Works?
+
+Consider an array arr[] = {5, 1, 4, 2, 8}
+
+First Pass: 
+Bubble sort starts with very first two elements, comparing them to check which one is greater.
+( 5 1 4 2 8 ) –> ( 1 5 4 2 8 ), Here, algorithm compares the first two elements, and swaps since 5 > 1. 
+( 1 5 4 2 8 ) –>  ( 1 4 5 2 8 ), Swap since 5 > 4 
+( 1 4 5 2 8 ) –>  ( 1 4 2 5 8 ), Swap since 5 > 2 
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ), Now, since these elements are already in order (8 > 5), algorithm does not swap them
+
+Second Pass: 
+( 1 4 2 5 8 ) –> ( 1 4 2 5 8 ) 
+( 1 4 2 5 8 ) –> ( 1 2 4 5 8 ), Swap since 4 > 2 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –>  ( 1 2 4 5 8 ) 
+
+Third Pass:
+Now, the array is already sorted, but our algorithm does not know if it is completed.
+The algorithm needs one whole pass without any swap to know it is sorted.
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+( 1 2 4 5 8 ) –> ( 1 2 4 5 8 ) 
+
+# Python program for implementation of Bubble Sort
+def bubbleSort(arr):
+    n = len(arr)
+ 
+    # Traverse through all array elements
+    for i in range(n):
+ 
+        # Last i elements are already in place
+        for j in range(0, n-i-1):
+ 
+            # traverse the array from 0 to n-i-1
+            # Swap if the element found is greater
+            # than the next element
+            if arr[j] > arr[j+1]:
+                arr[j], arr[j+1] = arr[j+1], arr[j]
+ 
+ 
+# Driver code to test above
+arr = [64, 34, 25, 12, 22, 11, 90]
+ 
+bubbleSort(arr)
+ 
+print("Sorted array is:")
+for i in range(len(arr)):
+    print("%d" % arr[i], end=" ")
+
+output:
+Sorted array is:
+11 12 22 25 34 64 90
+
+UNIQUE
+Reference:
+https://www.geeksforgeeks.org/python-get-unique-values-list/
+
+example:
+Input : 1 2 1 1 3 4 3 3 5 
+Output : 1 2 3 4 5 
+
+Method 1: Traversal of list
+Using traversal, we can traverse for every element in the list and check 
+... if the element is in the unique_list already if it is not over there, 
+then we can append it in the unique_list.
+
+# function to get unique values
+def unique(list):
+  
+    # initialize a null list
+    unique_list = []
+      
+    # traverse for all elements
+    for x in list:
+        # check if exists in unique_list or not
+        if x not in unique_list:
+            unique_list.append(x)
+    # print list
+    for x in unique_list:
+        print(x),
+
+list =[1, 2, 1, 1, 3, 4, 3, 3, 5]
+print("\nthe unique values from list is")
+unique(list)
+
+Method 2 : Using Set
+Using set() property of Python, we can easily check for the unique values. 
+Insert the values of the list in a set. 
+Set only stores a value once even if it is inserted more than once. 
+After inserting all the values in the set by list_set=set(list1), 
+... convert this set to a list to print It
+
+# function to get unique values
+def unique(list):
+      
+    # insert the list to the set
+    list_set = set(list)
+    # convert the set to the list
+    unique_list = (list(list_set))
+    for x in unique_list:
+        print(x)
+
+list =[1, 2, 1, 1, 3, 4, 3, 3, 5]
+print("\nthe unique values from list is")
+unique(list)
+
+
+REGEX
+A Regular Expressions (RegEx) is a special sequence of characters 
+... that uses a search pattern to find a string or set of strings.
+
+Regular Expression Quick Guide
+^ matches the beginning of a line
+$ matches the end of a line
+. matches any character
+|  means OR (Matches with any of the characters separated by it.
+\s matches whitespace
+\S matches any non-whitespace character
+* repeats a character zero or more times
+*? repeats a character zero or more times (non-greedy)
++ repeats a character one or more times
++? repeats a character one or more times (non-greedy)
+[aeiou] matches a single character in the listed set
+[^XYZ] matches a single character not in the listed set
+[a-z0-9] the set of characters can include a range
+( indicates where string extraction is to start
+) indicates where string extraction is to end
+
+Regex Module in Python
+re.findall()
+re.compile() 
+re.split() 
+re.sub() 
+re.subn() 
+re.escape()
+re.search()
+
+
+GENERATORS
+Reference:
+https://www.geeksforgeeks.org/generators-in-python/
+
+There are two terms involved when we discuss generators.
+
+1. Generator-Function: it is defined like a normal function, 
+... but whenever it needs to generate a value, 
+... it does so with the "yield" keyword rather than "return"
+example:
+def simpleGeneratorFun():
+    yield 1            
+    yield 2            
+    yield 3
+for value in simpleGeneratorFun(): 
+    print(value)
+output:
+1
+2
+3
+
+2. Generator-Object: it return a generator object, 
+... they are used either by calling the "next" method on the generator object 
+... or using the generator object in a “for in” loop
+example:
+def simpleGeneratorFun():
+    yield 1
+    yield 2
+    yield 3
+x = simpleGeneratorFun()
+print(x.next())
+print(x.next())
+print(x.next())
+output:
+1
+2
+3
+
+SAVING FILES IN PYTHON 
+import pickle #used for storing small data points
+pickle.dump #to save
+pickle.load #to load
+
+other save variations for python:
+Sqlite3
+SqliteDict
+
+
+
