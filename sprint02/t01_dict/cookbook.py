@@ -1,7 +1,7 @@
 # What is a dict in Python?
-# https://www.digitalocean.com/community/tutorials/understanding-dataaries-in-python-3
-# The dataary is Python’s built-in mapping type. 
-# dataaries map "keys" to "values" and these key-value pairs 
+# https://www.digitalocean.com/community/tutorials/understanding-dictionaries-in-python-3
+# The dictionary is Python’s built-in mapping type. 
+# dictionaries map "keys" to "values" and these key-value pairs 
 # ...provide a useful way to store data in Python.
 
 

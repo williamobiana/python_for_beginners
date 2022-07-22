@@ -10,9 +10,10 @@
 # Built-In Sorting in Python use the sorted() function
 # example:
 # list = [8, 2, 6, 4, 5]
-# sorted(list)
+# sorted(list) # asending is default (for desending: sorted(list, reverse=true))
 # output
 # [2, 4, 5, 6, 8]
+
 
 # Most popular Sorting algorithms
 # bubble sort
