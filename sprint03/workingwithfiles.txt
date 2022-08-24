@@ -1,0 +1,183 @@
+# Main Topics
+* lambda
+* map
+* filter
+* read file 
+* write to file 
+* load JSON
+* dump JSON
+* calculator operations
+* function tools
+* raise error
+* group
+
+
+## Interact with files in Python
+https://www.geeksforgeeks.org/interact-with-files-in-python/
+
+The first step in using a file instance is to open a disk file
+syntax:
+open(filename, mode)
+
+you can use the following modes if nesseary
+Read Only (‘r’)
+Read and Write (‘r+’)
+Write Only (‘w’)
+Write and Read (‘w+’) 
+Append Only (‘a’)
+Append and Read (‘a+’) 
+
+example:
+Open function to open the file "MyFile1.txt" (same directory) in append mode
+file1 = open("MyFile.txt","w+") 
+
+### Reading from File
+There are three ways to read data from a text file
+read():
+File_object.read([n])
+
+readline(): 
+File_object.readline([n])
+
+readlines():
+File_object.readlines()
+
+example:
+Program to show various ways to read data from a file.  
+    
+# Creating a file 
+file1 = open("myfile.txt", "w") 
+L = ["This is Delhi \n", "This is Paris \n", "This is London \n"] 
+    
+# Writing data to a file 
+file1.write("Hello \n")  
+file1.writelines(L) 
+file1.close()  # to change file access modes 
+    
+file1 = open("myfile.txt", "r+") 
+    
+print("Output of Read function is ") 
+print(file1.read()) 
+print() 
+    
+# seek(n) takes the file handle to the nth bite from the beginning.  
+file1.seek(0) 
+    
+print("Output of Readline function is ") 
+print(file1.readline()) 
+print() 
+    
+file1.seek(0) 
+    
+# To show difference between read and readline  
+print("Output of Read(9) function is ") 
+print(file1.read(9)) 
+print() 
+    
+file1.seek(0) 
+    
+print("Output of Readline(9) function is ") 
+print(file1.readline(9)) 
+print() 
+    
+file1.seek(0) 
+    
+# readlines function  
+print("Output of Readlines function is ") 
+print(file1.readlines()) 
+print() 
+file1.close() 
+
+
+### Writing to File
+There are two ways to write in a file.
+write()
+writelines()
+
+# Python program to demonstrate writing to file 
+    
+# Opening a file 
+file1 = open('myfile.txt', 'w') 
+L = ["This is Delhi \n", "This is Paris \n", "This is London \n"] 
+s = "Hello\n"
+    
+# Writing a string to file 
+file1.write(s) 
+    
+# Writing multiple strings at a time 
+file1.writelines(L) 
+    
+# Closing file 
+file1.close() 
+    
+# Checking if the data is written to file or not 
+file1 = open('myfile.txt', 'r') 
+print(file1.read()) 
+file1.close() 
+
+
+
+## JSON dump & JSON load
+https://www.geeksforgeeks.org/reading-and-writing-json-to-a-file-in-python/
+
+### Writing JSON to a file using json.dumps() 
+JSON has a function called json.dumps() that helps in converting a dictionary to a JSON object. 
+It takes two parameters: dictionary, indent
+
+example:
+import json
+ 
+# Data to be written
+dictionary = {
+    "name": "sathiyajith",
+    "rollno": 56,
+    "cgpa": 8.6,
+    "phonenumber": "9976770500"
+}
+ 
+# Serializing json
+json_object = json.dumps(dictionary, indent=4)
+ 
+# Writing to sample.json
+with open("sample.json", "w") as outfile:
+    outfile.write(json_object)
+
+
+or
+
+
+import json
+ 
+# Data to be written
+dictionary = {
+    "name": "sathiyajith",
+    "rollno": 56,
+    "cgpa": 8.6,
+    "phonenumber": "9976770500"
+}
+ 
+with open("sample.json", "w") as outfile:
+    json.dump(dictionary, outfile)
+
+
+
+### Reading JSON from a file using json.load()
+JSON has json.load() function that loads the JSON content from a JSON file into a dictionary. 
+It takes one parameter: file pointer
+
+example:
+import json
+ 
+# Opening JSON file
+with open('sample.json', 'r') as openfile:
+ 
+    # Reading from json file
+    json_object = json.load(openfile)
+ 
+print(json_object)
+print(type(json_object))
+
+
+
+
+

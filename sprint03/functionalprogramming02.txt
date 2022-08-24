@@ -1,0 +1,219 @@
+# Main Topics
+* lambda
+* map
+* filter
+* read file 
+* write to file 
+* load JSON
+* dump JSON
+* calculator operations
+* function tools
+* raise error
+* group
+
+
+## How to write functional-style programs in Python
+https://realpython.com/python-functional-programming/#what-is-functional-programming
+
+pure function = is a function, given the same input, will always return the same output. without any side-effects
+In functional programming, a program consists entirely of evaluation of 'pure functions'.
+its advantages are:
+* it always returns the results you want, rather than steps
+* its behaviour depends on the input and output (elimates the need to debug)
+* it doesnt cause side-effects, hence you can run them in parallel with each other.
+
+
+### supporting functional programming
+a function should have 2 abilites:
+* to take another function as an argument
+* to return another function to its caller
+Functions have the same character as 'strings' and 'intergers'
+example: 
+def func():
+    print("I am function func()!")
+
+>>> func()
+I am function func()!
+
+>>> another_name = func
+>>> another_name()
+I am function func()!
+
+The function can be displayed to the console with print(), 
+it can be included as an element in a composite data object like a list, 
+or even used as a dictionary key
+example:
+def func():
+    print("I am function func()!")
+
+>>> print("cat", func, 42)
+cat <function func at 0x7f81b4d29bf8> 42
+
+>>> objects = ["cat", func, 42]
+>>> objects[1]
+<function func at 0x7f81b4d29bf8>
+>>> objects[1]()
+I am function func()!
+
+>>> d = {"cat": 1, func: 2, 42: 3}
+>>> d[func]
+2
+
+A function can be passed to another function as an argument (function composition)
+def inner():
+    print("I am function inner()!")
+
+def outer(function): 
+    function()
+
+>>> outer(inner)
+I am function inner()!
+
+In the 'function composition' example above, 
+the passed-in function sometimes is referred to as a 'callback'
+because a call back to the 'inner' function can modify the 'outer' function’s behavior.
+example using the sorted() function in python:
+animals = ["ferret", "vole", "dog", "gecko"]
+>>> sorted(animals)
+['dog', 'ferret', 'gecko', 'vole']
+
+we can add an optional sorting key argument that specifies a 'callback' function (key=len).
+animals = ["ferret", "vole", "dog", "gecko"]
+>>> sorted(animals, key=len)
+['dog', 'vole', 'gecko', 'ferret']
+
+we can define our own 'callback' function that reverses the sense of len():
+def reverse_len(s):
+    return -len(s)
+
+>>> sorted(animals, key=reverse_len)
+['ferret', 'gecko', 'vole', 'dog']
+
+Just as we can pass a function to another function as an argument, 
+a function can also specify another function as its return value
+def outer():
+    def inner():
+        print("I am function inner()!")
+    #Function outer() returns function inner()
+    return inner
+
+>>> function = outer()
+>>> function
+<function outer.<locals>.inner at 0x7f18bc85faf0>
+
+>>> function()
+I am function inner()!
+
+>>> outer()()
+I am function inner()!
+
+
+### Defining an Anonymous Function With lambda
+using a lambda syntax, you can define an emergency function 
+lambda <parameter_list>: <expression>
+
+It takes arguments, as specified by <parameter_list>, and returns a value, as indicated by <expression>.
+example:
+>>> lambda s: s[::-1]      #s[::-1] means slicing and reverse
+<function <lambda> at 0x7fef8b452e18>
+
+>>> callable(lambda s: s[::-1])
+True
+
+You can assign it to a variable and then call on the function
+example:
+>>> reverse = lambda s: s[::-1]
+>>> reverse("I am a string")
+'gnirts a ma I'
+
+the above operation is equivalent to defining a function manually, 
+but lambda creates a function faster.
+
+However, it’s not necessary to assign a variable to a lambda expression before calling it. 
+You can also call the function defined by a lambda expression directly:
+>>> (lambda s: s[::-1])("I am a string")
+'gnirts a ma I'
+
+other abilites lambda can do:
+* callback
+* define a lambda function without parameters
+* return a tuple from a lambda function. You just have to denote the tuple explicitly with parentheses.
+* to include a lambda expression in an f-string, you’ll need to enclose it in explicit parentheses.
+
+
+### Applying a Function to an Iterable With map()
+With map(), you can apply a function to each element in an iterable in turn, 
+and map() will return an iterator that yields the results.
+ie: a map() statement can often take the place of an explicit loop
+
+#### Calling map() With a Single Iterable
+syntax for calling map() on a single iterable:
+map(<f>, <iterable>)
+
+we define our function:
+def reverse(s):
+    return s[::-1]
+
+we have a list to iterate:
+animals = ["ferret", "vole", "dog", "gecko"]
+
+>>> iterator = map(reverse, animals)
+>>> iterator
+<map object at 0x7fd3558cbef0>
+
+map() doesnt return a list, rather it returns an interator/map object.
+to obtain the value from the iterator we need to use list() or use 'for loop'.
+>>> iterator = map(reverse, animals)
+>>> list(iterator)
+['tac', 'god', 'gohegdeh', 'okceg']
+
+>>> iterator = map(reverse, animals)
+>>> for i in iterator:
+...     print(i)
+...
+tac
+god
+gohegdeh
+okceg
+
+other abilites map on a single iterable can do:
+you could use an anonymous lambda function
+str.join(), which concatenates strings from an iterable
+
+
+#### Calling map() With Multiple Iterables
+syntax for calling map() on multiple iterable argument:
+map(<f>, <iterable₁>, <iterable₂>, ..., <iterableₙ>)
+
+<f> acts on <iterable₁> and becomes the first item that will return. 
+Then <f> acts on <iterable₂> and that becomes the second yielded item, and so on.
+
+example:
+def f(a, b, c):
+    return a + b + c
+
+>>> list(map(f, [1, 2, 3], [10, 20, 30], [100, 200, 300]))
+[111, 222, 333]
+
+The first item returned is the result of applying f() to the first element in each list: f(1, 10, 100). 
+The second item returned is f(2, 20, 200), and the third is f(3, 30, 300).
+
+note: you could readily replace 'f' with a lambda function instead:
+
+
+### Selecting Elements From an Iterable With filter()
+filter() syntax allows you filter items from an iterable based on the given function.
+filter(<f>, <iterable>)
+
+def greater_than_100(x):
+   return x > 100
+
+>>> list(filter(greater_than_100, [1, 111, 2, 222, 3, 333]))
+[111, 222, 333]  
+# [1, 2, 3] were discarded
+
+other abilites filter can do:
+filter over a range
+filter over a list of string method (uppercase, lowercase strings eg: s.isupper(), s.islower())
+
+
