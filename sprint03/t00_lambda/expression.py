@@ -32,8 +32,8 @@
 # lambda a, b: a + b
 #
 #     The keyword: lambda
-#     A bound variable: a, b
-#     A body: a + b
+#     A bound variable: a, b (argument)
+#     A body: a + b (return)
 #
 # example:
 # if we pass a value a = 2, b = 2
