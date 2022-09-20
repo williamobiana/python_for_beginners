@@ -62,7 +62,7 @@
 # 
 
 #####task######
-
+# https://www.programiz.com/python-programming/anonymous-function
 # function
 # def reminder(n, a, b):
 #     if n % a == 0 and n % b == 0:
