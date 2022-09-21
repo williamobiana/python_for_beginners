@@ -1,7 +1,4 @@
 
-from ast import operator
-
-
 operators = {'add': (lambda a,b:a+b), 
              'sub': (lambda a,b:a-b), 
              'mul': (lambda a,b:a*b), 
@@ -18,12 +15,3 @@ def calculator(opr, a, b):
             return operators[opr](a,b)
     except ValueError as z:
         print(z)
-
-
-
-
-
-    
-
-
-
