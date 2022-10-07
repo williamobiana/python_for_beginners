@@ -1,0 +1,78 @@
+date and time
+URL
+communicate with browser
+modules and packages
+connect to database management system
+work with databases (storage and manipulation of data)
+
+
+What is a URL?
+How to use a module? What are the uses?
+How is a module different from a package in Python? What are the benefits of using a package?
+What is a relational database?
+What is SQL?
+What are databases used for?
+What is a Python virtual environment?
+
+### What is a URL? ###
+URL stands for Uniform Resource Locator
+it is the address of a given unique resource on the Web.
+http://www.example.com:80/path/to/myfile.html?key1=value1&key2=value2#SomewhereInTheDocument
+
+scheme = http://
+authority = www.example.com:80
+path to resource = /path/to/myfile.html
+parameters = ?key1=value1&key2=value2
+anchor = #SomewhereInTheDocument
+
+### How to use a module? What are the uses? ###
+https://www.analyticsvidhya.com/blog/2021/07/working-with-modules-in-python-must-known-fundamentals-for-data-scientists/#h2_6
+
+The core idea of use modules is to minimize the code
+We can break a complete code into separate parts, add to a module. 
+and then we can call these modules in our main program logic.
+
+example:
+nano mymodule.py 
+def welcome(name):
+  print("Hello, " + name +" to Analytics Classes")
+
+in script
+import mymodule
+mymodule.welcome(william)
+# output: Hello william to Analytics Classes
+
+or 
+
+from mymodule import welcome
+welcome(william)
+# output: Hello william to Analytics Classes
+
+
+### How is a module different from a package in Python? ###
+### What are the benefits of using a package? ###
+A module is a file containing Python code (functions). 
+A package, is like a directory/library that holds sub-packages and modules.
+you can easliy share packages with other developers for them to use 
+
+
+### What is a relational database? ###
+Relational Database = Tables are structured related to each other.
+means that tables in database are related using primary/foreign key relationship. 
+Used to store, modify and retrieve data in the database.
+
+Non-Relational Database =
+There is no relation at all between tables
+Mostly key+value pair : like jSon
+
+## What is SQL? ###
+SQL stands for Structured Query Language. 
+It’s the language for storing, manipulating and retrieving data within relational databases.
+
+
+### What is a Python virtual environment? ###
+A virtual environment is a Python environment 
+such that the Python interpreter, libraries and scripts installed into it are isolated 
+from those installed in other virtual environments,
+
+example python3 is a virtual environment 

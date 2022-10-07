@@ -1,0 +1,32 @@
+1. Get acquainted with the basics of a URL.
+2. Learn how to organize your code with modules and packages in this article.
+3. Learn more about the history of the databases.
+4. Read about database attacks.
+5. Find information about the areas where databases are used.
+6. Investigate how to use SQL in Python.
+
+
+URL 
+https://www.geeksforgeeks.org/python-urllib-module/
+Urllib package is the URL handling module for python
+It is used to fetch URLs (Uniform Resource Locators). 
+It uses the 'urlopen' function and is able to fetch URLs using a variety of different protocols.
+    urllib.request for opening and reading.
+    urllib.parse for parsing URLs
+    urllib.error for the exceptions raised
+    urllib.robotparser for parsing robot.txt files
+
+If urllib is not present in your environment, install with
+pip install urllib
+
+
+How to organize your code with modules and packages
+https://towardsdatascience.com/learn-python-modules-and-packages-in-5-minutes-bbdfbf16484e
+
+
+History of the databases
+Database attacks (SQL injection)
+https://www.geeksforgeeks.org/sql-injection-2/
+
+How to use SQL in Python
+https://www.geeksforgeeks.org/sql-using-python/
