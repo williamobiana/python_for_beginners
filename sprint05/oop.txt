@@ -1,0 +1,48 @@
+# What is object-oriented programming (OOP)?
+# What is the use of OOP in general?
+# What is the use of OOP in Python?
+# What are the benefits of OOP compared to functional programming?
+# What is a class?
+# What is meant by self in Python?
+# What is the difference between a method and a function?
+# What are class arguments?
+# What are threads ?
+# What are processes ?
+# What is the difference between a process and a thread?
+
+
+Concepts of OOP 
+* abstarction
+* encapsulation
+* inheritance
+* polymorisim
+
+
+an object is a thing or entitiy which can be interacted with and process its data.
+
+abstaction: to simplify an object to its relevant data and functions it can do with the data.
+
+class is a template for creating objects:
+it defines the attributes (aka properties)
+and its operations (aka methods)
+
+when an object is created from a class, 
+we can assign additional values to its properties and def additional methods for its operations
+
+encapsulation: protect the class by making it immutable and hidden
+
+inheritance: class can get properties and method from another class in its hierarchy
+
+polymorisim : a class can overwrite/change an inherited method for its operations.
+
+
+
+
+
+
+
+# method
+
+
+
+

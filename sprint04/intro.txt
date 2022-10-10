@@ -51,8 +51,8 @@ welcome(william)
 
 ### How is a module different from a package in Python? ###
 ### What are the benefits of using a package? ###
-A module is a file containing Python code (functions). 
-A package, is like a directory/library that holds sub-packages and modules.
+A module is a file containing Python functions. 
+A package, is like a folder that holds modules and sub_pakages.
 you can easliy share packages with other developers for them to use 
 
 
